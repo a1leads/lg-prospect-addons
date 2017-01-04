@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+      #tv, #moving {
+        display: none;
+        padding-left: 20px;
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <form>
+        <legend>I would like more information about...</legend>
+        <input type="checkbox" name="tv" value="tv" /><label for="tv">Cable TV</label><br />
+        <div id="tv">
+          <p>Provider</p>
+          <input type="checkbox" name="Direct TV" value="Direct TV" /><label for="Direct TV">Direct TV</label><br />
+          <input type="checkbox" name="Cox" value="Cox" /><label for="Cox">Cox</label><br />
+          <input type="checkbox" name="Dish Network" value="Dish Network" /><label for="Dish Network">Dish Network</label><br />
+        </div>
+        <input type="checkbox" name="moving" value="moving"  /><label for="moving">Moving Help</label><br />
+        <div id="moving">
+          <p>Location</p>
+          <label>Departing Date</label>
+          <input type="date" name="date">
+          <label>Destination</label>
+          <input type="text" name="destination">
+        </div>
+        <input type="checkbox" name="credit" id="credit" value="credit" /><label for="credit">Credit Repair</label><br />
+        <input type="checkbox" name="roofing" id="roofing" value="roofing" /><label for="roofing">Roofing Inspection</label><br />
+        <input type="checkbox" name="plumbing" id="plumbing" value="plumbing" /><label for="plumbing">Plumbing Assistance</label><br />
+        <input type="submit" name="submit">
+      </form>
+    </fieldset>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      (function($){
+        $(document).ready(function() {
+          $("input[name='tv']").change(function(){
+            if ($("input[name='tv']").prop('checked')) {
+              $('#tv').show(400);
+            } else {
+              $('#tv').hide(400);
+            }
+          })
+          $("input[name='moving']").change(function(){
+            if ($("input[name='moving']").prop('checked')) {
+              $('#moving').show(400);
+            } else {
+              $('#moving').hide(400);
+            }
+          })
+          // var settings = {
+          //   url: '',
+          //   context: document.body
+          // }
+          // $.ajax(settings,function(){
+
+          // });
+        });
+      }(jQuery));
+    </script>
+  </body>
+</html>
